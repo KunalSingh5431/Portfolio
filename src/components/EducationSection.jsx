@@ -86,97 +86,111 @@ const Education = () => {
 
         <VerticalTimeline lineColor="#00acc1">
           {education.map((item, index) => (
-            <VerticalTimelineElement
-              key={index}
-              contentStyle={{
-                background:
-                  "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                color: "#fff",
-                borderRadius: "12px",
-                boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
-              }}
-              contentArrowStyle={{ borderRight: "7px solid #00acc1" }}
-              date={item.date}
-              dateClassName="custom-date" // 👈 date class added
-              iconStyle={{
-                background: "linear-gradient(135deg, #667eea, #764ba2)",
-                //padding: "4px",
-                borderRadius: "50%",
-                //boxShadow: "0 0 0 4px #e0f7fa",
-              }}
-              icon={
-                <Box
-                  sx={{
-                    border: "4px solid transparent",
-                    //borderImage: "linear-gradient(135deg, #667eea, #764ba2)",
-                    borderImageSlice: 1,
-                    borderRadius: "50%",
-                    width: "100%",
-                    height: "100%",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
-                    width="100%"
-                    height="100%"
-                    alt={item.institution}
-                    style={{ objectFit: "cover" }}
-                    src={item.img}
-                  />
-                </Box>
-              }
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-            >
-              <Box>
-                <Typography
-                  variant="h6"
-                  fontWeight={700}
-                  sx={{
-                    fontSize: "1.2rem",
-                    color: "#fff",
-                    mb: 0.5,
-                  }}
-                >
-                  {item.degree}
-                </Typography>
-
-                <Typography
-                  variant="subtitle1"
-                  fontWeight={500}
-                  sx={{ fontStyle: "italic", color: "#fff" }}
-                >
-                  {item.institution}
-                </Typography>
-
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mt: 1,
-                    lineHeight: 1.7,
-                    color: "#fff",
-                    fontSize: "0.95rem",
-                  }}
-                >
-                  {item.details}
-                </Typography>
-
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mt: 1,
-                    fontStyle: "italic",
-                    color: "#fff",
-                    fontWeight: 500,
-                  }}
-                >
-                  {item.CGPA
-                    ? `CGPA: ${item.CGPA}`
-                    : item.Percentage
-                    ? `Percentage: ${item.Percentage}`
-                    : ""}
-                </Typography>
-              </Box>
-            </VerticalTimelineElement>
+           <VerticalTimelineElement
+           key={index}
+           contentStyle={{
+             background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+             color: "#fff",
+             borderRadius: "12px",
+             boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
+           }}
+           contentArrowStyle={{ borderRight: "7px solid #00acc1" }}
+           date={item.date}
+           dateClassName="custom-date"
+           iconStyle={{
+             background: "linear-gradient(135deg, #667eea, #764ba2)",
+             borderRadius: "50%",
+           }}
+           icon={
+             <Box
+               sx={{
+                 border: "4px solid transparent",
+                 borderRadius: "50%",
+                 width: "100%",
+                 height: "100%",
+                 overflow: "hidden",
+               }}
+             >
+               <img
+                 width="100%"
+                 height="100%"
+                 alt={item.institution}
+                 style={{ objectFit: "cover" }}
+                 src={item.img}
+               />
+             </Box>
+           }
+           data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+         >
+           {/* 🔹 Top Row: Image + Key Info */}
+           <Box sx={{ display: "flex", gap: 2, alignItems: "center", mb: 1 }}>
+             <Box
+               component="img"
+               src={item.img}
+               alt={item.institution}
+               sx={{
+                 width: 70,
+                 height: 70,
+                 borderRadius: "8px",
+                 objectFit: "cover",
+                 flexShrink: 0,
+                 border: "2px solid rgba(255,255,255,0.4)",
+               }}
+             />
+         
+             <Box>
+               <Typography
+                 variant="subtitle1"
+                 fontWeight={700}
+                 sx={{ fontSize: "1rem", color: "#fff", mb: 0.2 }}
+               >
+                 {item.institution}
+               </Typography>
+         
+               <Typography
+                 variant="body1"
+                 sx={{ fontWeight: 600, color: "#fff", mb: 0.2 }}
+               >
+                 {item.degree}
+               </Typography>
+         
+               <Typography
+                 variant="body2"
+                 sx={{
+                   fontStyle: "italic",
+                   color: "rgba(255,255,255,0.85)",
+                   mb: 0.2,
+                 }}
+               >
+                 Duration: {item.date}
+               </Typography>
+         
+               <Typography
+                 variant="body2"
+                 sx={{
+                   fontWeight: 500,
+                   color: "#ffeb3b",
+                 }}
+               >
+                 {item.CGPA
+                   ? `CGPA: ${item.CGPA}`
+                   : item.Percentage
+                   ? `Percentage: ${item.Percentage}`
+                   : ""}
+               </Typography>
+             </Box>
+           </Box>
+         
+           {/* 🔹 Bottom: Full-width description */}
+           <Typography
+             variant="body2"
+             sx={{ lineHeight: 1.7, color: "rgba(255,255,255,0.9)" }}
+           >
+             {item.details}
+           </Typography>
+         </VerticalTimelineElement>
+         
+         
           ))}
         </VerticalTimeline>
       </Container>
