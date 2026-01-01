@@ -114,6 +114,3 @@ Feel free to fork this repository and submit a pull request.
 ## ⭐ Show Your Support
 
 If you like this project, please give it a ⭐ on GitHub — it really helps!
-
-## 📂 Project Structure
-
