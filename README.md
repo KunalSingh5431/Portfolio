@@ -40,7 +40,7 @@ I love building **scalable web applications**, working on **real-world projects*
 - React.js
 
 **Styling**
-- CSS / Styled Components *(if applicable)*
+- CSS / Styled Components
 
 **Other Tools**
 - Git & GitHub
