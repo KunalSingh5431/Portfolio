@@ -3,7 +3,7 @@
 Welcome to my personal portfolio repository!  
 This project showcases **who I am, what I do, and the projects I’ve worked on** as a **Full Stack Developer & ML Enthusiast**.
 
-🔗 **Live Demo:** *(Add your deployed link here if available)*  
+🔗 **Live Demo:** *[Live](https://portfolio-nine-kappa-opou7e5slu.vercel.app)*  
 📂 **Repository:** [Portfolio](https://github.com/KunalSingh5431/Portfolio)
 
 ---
